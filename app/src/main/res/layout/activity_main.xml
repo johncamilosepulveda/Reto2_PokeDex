@@ -46,7 +46,7 @@
         android:background="#8F3E3E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAtrapar" />
 
     <EditText
         android:id="@+id/editTextNameId"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewPoke" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonAtrapar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -81,6 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextNameId" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonRecycler"
         android:layout_width="342dp"
         android:layout_height="355dp"
         android:layout_marginStart="20dp"
