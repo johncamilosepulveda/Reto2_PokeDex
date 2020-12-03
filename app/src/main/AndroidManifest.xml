@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto2_PokeDex">
-        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.MainActivity"></activity>
         <activity android:name=".Activity.PokemonListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

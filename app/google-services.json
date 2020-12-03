@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "974290650845",
+    "firebase_url": "https://appmoviles2020-b4608.firebaseio.com",
+    "project_id": "appmoviles2020-b4608",
+    "storage_bucket": "appmoviles2020-b4608.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974290650845:android:3116961be917df5ebcbd34",
+        "android_client_info": {
+          "package_name": "co.domi.clase10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy5mzQ0N0iJCu1YB8Krrq9KAEzagJOkrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974290650845:android:5755c1930332699ebcbd34",
+        "android_client_info": {
+          "package_name": "co.domi.clase14"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy5mzQ0N0iJCu1YB8Krrq9KAEzagJOkrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974290650845:android:0887179e273c3d76bcbd34",
+        "android_client_info": {
+          "package_name": "com.example.reto2_pokedex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy5mzQ0N0iJCu1YB8Krrq9KAEzagJOkrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974290650845-u195ns5imur71icajerp06qhmvld0iat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
