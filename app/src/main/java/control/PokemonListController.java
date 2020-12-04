@@ -1,6 +1,7 @@
 package control;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Toast;
@@ -8,10 +9,13 @@ import android.widget.Toast;
 import com.example.reto2_pokedex.Activity.PokemonAdapter;
 import com.example.reto2_pokedex.Activity.PokemonListActivity;
 import com.example.reto2_pokedex.Activity.PokemonView;
+import com.example.reto2_pokedex.Activity.PokemonViewActivity;
 import com.example.reto2_pokedex.R;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import org.w3c.dom.Document;
 
@@ -51,8 +55,13 @@ public class PokemonListController implements View.OnClickListener, OnGetPokemon
     public void addEventPokemonAdapter(){
         pokemonAdapter.setListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent i = new Intent(view, PokemonViewActivity.class);
+                Pokemon pokemon = pokemonAdapter.getPokemon().get(view.getPokemonRecycler().getChildAdapterPosition(v));
+                i.putExtra("myUser", view.getMyuser());
+                i.putExtra("pokemon", pokemon);
+                view.startActivity(i);
+
             }
         });
     }
@@ -75,6 +84,7 @@ public class PokemonListController implements View.OnClickListener, OnGetPokemon
                 }else{
                     searchPokemonFireBase(view.getSearchText().toString());
                 }
+                break;
         }
 
     }
@@ -121,6 +131,43 @@ public class PokemonListController implements View.OnClickListener, OnGetPokemon
                     addEventPokemonAdapter();
                 }
         );
+
+        Log.e(">>>>>", "Se cargó correctamente!");
+
+    }
+
+    public void searchPokemonFireBase(String name){
+        ArrayList<Pokemon> pokemonArrayList = new ArrayList<>();
+        String userNameId = view.getMyuser().getId();
+
+        CollectionReference pokemonRef = db.collection("users").document(userNameId).collection("pokemon");
+        Query query = pokemonRef.whereEqualTo("pokemonName", name);
+        query.get().addOnCompleteListener(
+
+                task -> {
+                    if(task.isSuccessful()){
+                        if(task.getResult().size() > 0){
+                            for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
+                                Pokemon dbPokemon = documentSnapshot.toObject(Pokemon.class);
+                                pokemonArrayList.add(dbPokemon);
+                            }
+                        }
+                    }
+                }
+
+        );
+
+        view.runOnUiThread(
+
+                () -> {
+                    pokemonAdapter.setPokemon(pokemonArrayList);
+                    view.getPokemonRecycler().setAdapter(pokemonAdapter);
+                    addEventPokemonAdapter();
+                }
+
+        );
+
+        Log.e(">>>>>>>", "se cargó correctamente!");
 
     }
 

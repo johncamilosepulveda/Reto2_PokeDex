@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.reto2_pokedex.R;
 
 import control.PokemonViewController;
@@ -29,6 +30,42 @@ public class PokemonViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_view);
+
+        dropBtn = findViewById(R.id.dropBtn);
+        pokeName = findViewById(R.id.pokeName);
+        pokeType = findViewById(R.id.pokeType);
+        defensaValue = findViewById(R.id.defensaValue);
+        ataqueValue = findViewById(R.id.ataqueValue);
+        velocidadValue = findViewById(R.id.velocidadValue);
+        vidaValue = findViewById(R.id.vidaValue);
+        Text1 = findViewById(R.id.Text1);
+        Text2 = findViewById(R.id.Text2);
+        Text3 = findViewById(R.id.Text3);
+        Text4 = findViewById(R.id.Text4);
+        pokemonIV = findViewById(R.id.pokemonIV);
+
+        myuser = (User) getIntent().getExtras().getSerializable("myUser");
+        pokemon = (Pokemon) getIntent().getExtras().getSerializable("pokemon");
+
+        Glide.with(this).load(pokemon.getSprites().getFront_default()).centerCrop().into(pokemonIV);
+
+        pokeName.setText(pokemon.getPokemonName());
+        pokeType.setText(pokemon.getTypes().get(0).getType().getName());
+
+        Text1.setText(pokemon.getStats().get(0).getStat().getName());
+        defensaValue.setText(pokemon.getStats().get(0).getBase_stat()+"");
+
+        Text2.setText(pokemon.getStats().get(1).getStat().getName());
+        ataqueValue.setText(pokemon.getStats().get(1).getBase_stat()+"");
+
+        Text3.setText(pokemon.getStats().get(2).getStat().getName());
+        velocidadValue.setText(pokemon.getStats().get(2).getBase_stat()+"");
+
+        Text4.setText(pokemon.getStats().get(5).getStat().getName());
+        vidaValue.setText(pokemon.getStats().get(5).getBase_stat()+"");
+
+        pokemonViewController = new PokemonViewController(this);
+
     }
 
     public Button getDropBtn() {
