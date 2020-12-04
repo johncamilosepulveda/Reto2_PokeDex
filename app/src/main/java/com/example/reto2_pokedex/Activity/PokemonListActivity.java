@@ -16,7 +16,7 @@ import model.User;
 public class PokemonListActivity extends AppCompatActivity {
 
     private Button catchBtn, searchBtn;
-    private EditText searchText;
+    private EditText searchText, catchText;
     private User myuser;
     private RecyclerView pokemonRecycler;
     private PokemonListController pokemonListController;
@@ -29,6 +29,7 @@ public class PokemonListActivity extends AppCompatActivity {
         catchBtn = findViewById(R.id.buttonAtrapar);
         searchBtn = findViewById(R.id.buttonBuscar);
         searchText = findViewById(R.id.editTextNameId);
+        catchText = findViewById(R.id.editTextTextCatchPokemon);
         pokemonRecycler = findViewById(R.id.pokemonRecycler);
 
         pokemonRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
@@ -38,6 +39,14 @@ public class PokemonListActivity extends AppCompatActivity {
 
         pokemonListController = new PokemonListController(this);
 
+    }
+
+    public EditText getCatchText() {
+        return catchText;
+    }
+
+    public void setCatchText(EditText catchText) {
+        this.catchText = catchText;
     }
 
     public Button getCatchBtn() {

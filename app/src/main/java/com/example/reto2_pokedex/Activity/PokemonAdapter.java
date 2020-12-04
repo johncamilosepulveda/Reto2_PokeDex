@@ -60,4 +60,11 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonView> implements
         }
     }
 
+    public ArrayList<Pokemon> getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(ArrayList<Pokemon> pokemon) {
+        this.pokemon = pokemon;
+    }
 }
