@@ -60,6 +60,7 @@ public class MainController implements View.OnClickListener {
                         }
 
                 );
+                break;
         }
 
     }
