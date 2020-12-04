@@ -36,7 +36,7 @@ public class MainController implements View.OnClickListener {
         switch (v.getId()){
             case R.id.buttonIngresar:
                 String username = view.getUserNameTextPlain().getText().toString();
-                User user = new User(UUID.randomUUID().toString(), toString());
+                User user = new User(UUID.randomUUID().toString(), username);
 
                 CollectionReference userRef = db.collection("users");
                 Query query = userRef.whereEqualTo("username", username);
