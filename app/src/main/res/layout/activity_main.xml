@@ -6,109 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".Activity.PokemonListActivity">
 
-    <ImageView
-        android:id="@+id/imageViewPoke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:text="TextView"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@+id/imageViewPoke"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textTipo"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewPoke"
-        app:layout_constraintStart_toEndOf="@+id/imageViewPoke"
-        app:layout_constraintTop_toBottomOf="@+id/textNombre" />
-
     <View
         android:id="@+id/view"
         android:layout_width="314dp"
         android:layout_height="5dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:background="#8F3E3E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAtrapar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameId" />
 
     <EditText
         android:id="@+id/editTextNameId"
         android:layout_width="259dp"
         android:layout_height="39dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nombre o ID"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPoke" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextCatchPokemon" />
 
     <Button
         android:id="@+id/buttonBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPoke" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextCatchPokemon" />
 
     <Button
         android:id="@+id/buttonAtrapar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:text="Atrapar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNameId" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pokemonRecycler"
-        android:layout_width="362dp"
-        android:layout_height="434dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="331dp"
+        android:layout_height="463dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.142" />
 
     <EditText
         android:id="@+id/editTextTextCatchPokemon"
         android:layout_width="259dp"
         android:layout_height="39dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAtrapar"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNameId" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

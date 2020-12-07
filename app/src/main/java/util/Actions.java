@@ -8,7 +8,7 @@ import model.Pokemon;
 
 public class Actions {
 
-    private co.domi.apunters8.util.HTTPSWebUtilDomi https;
+    private HTTPSWebUtilDomi https;
     private Gson gson;
     private OnGetPokemon onGetPokemon;
 
