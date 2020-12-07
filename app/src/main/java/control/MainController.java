@@ -35,6 +35,7 @@ public class MainController implements View.OnClickListener {
 
         switch (v.getId()){
             case R.id.buttonIngresar:
+
                 String username = view.getUserNameTextPlain().getText().toString();
                 User user = new User(UUID.randomUUID().toString(), username);
 
@@ -65,10 +66,10 @@ public class MainController implements View.OnClickListener {
 
     }
 
-    private void goToPokemonList(User dbUser) {
+    private void goToPokemonList(User user) {
 
         Intent i = new Intent(view, PokemonListActivity.class);
-        i.putExtra("myUser", dbUser);
+        i.putExtra("myUser", user);
         view.startActivity(i);
 
     }
